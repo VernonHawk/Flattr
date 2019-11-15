@@ -1,0 +1,17 @@
+# Dependencies
+/node_modules
+
+# Testing
+/coverage
+
+# Production
+/build
+/dist
+
+# IDE
+.vscode
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+debug.log*

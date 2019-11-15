@@ -1,0 +1,45 @@
+{
+  "name": "flattr",
+  "version": "1.0.0",
+  "description": "A flat price estimation service",
+  "main": "index.tsx",
+  "author": "Igor Morenets",
+  "private": true,
+  "scripts": {
+    "start": "./dist/index.html",
+    "start:dev": "webpack-dev-server",
+    "build": "webpack",
+    "test": "echo 'No tests!'"
+  },
+  "dependencies": {
+    "@material-ui/core": "4.6.1",
+    "@material-ui/icons": "4.5.1",
+    "@material-ui/styles": "4.6.0",
+    "funfix-core": "7.0.1",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-redux": "7.1.3"
+  },
+  "devDependencies": {
+    "@types/html-webpack-plugin": "3.2.1",
+    "@types/react": "16.9.11",
+    "@types/react-dom": "16.9.4",
+    "@types/react-redux": "7.1.5",
+    "@types/webpack": "4.39.8",
+    "@types/webpack-dev-server": "3.4.0",
+    "clean-webpack-plugin": "3.0.0",
+    "html-webpack-plugin": "3.2.0",
+    "redux-devtools-extension": "2.13.8",
+    "source-map-loader": "0.2.4",
+    "ts-loader": "6.2.1",
+    "ts-node": "8.5.2",
+    "tslint": "5.20.1",
+    "tslint-immutable": "6.0.1",
+    "tslint-react": "4.1.0",
+    "typescript": "3.7.2",
+    "webpack": "4.41.2",
+    "webpack-cli": "3.3.10",
+    "webpack-dev-server": "3.9.0",
+    "whatwg-fetch": "3.0.0"
+  }
+}
