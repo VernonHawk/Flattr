@@ -2,8 +2,9 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { resolve } from 'path'
 import webpack from 'webpack'
+import devServer from 'webpack-dev-server'
 
-const config: webpack.Configuration = {
+const config: webpack.Configuration & devServer.Configuration = {
   entry: ['whatwg-fetch', './src/index.tsx'],
   devtool: 'source-map',
   mode: 'development',
