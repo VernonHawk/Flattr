@@ -12,6 +12,7 @@
 
     "jsx-wrap-multiline": false,
     "jsx-no-multiline-js": false,
+    "jsx-boolean-value": false,
 
     "readonly-keyword": true,
     "readonly-array": true,
