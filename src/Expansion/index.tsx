@@ -31,5 +31,8 @@ export const ExpansionSummary = withStyles(() => ({
       margin: 'auto',
     },
   },
+  expandIcon: {
+    marginBottom: -12,
+  },
   expanded: {},
 }))(ExpansionPanelSummary)
