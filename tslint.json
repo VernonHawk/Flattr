@@ -6,6 +6,7 @@
     "semicolon": false,
     "no-console": false,
     "object-literal-sort-keys": false,
+    "object-literal-key-quotes": [true, "as-needed"],
     "typedef": [true, "call-signature", "arrow-call-signature"],
     "arrow-parens": false,
     "no-duplicate-switch-case": true,
