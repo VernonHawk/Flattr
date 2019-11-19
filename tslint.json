@@ -10,6 +10,7 @@
     "typedef": [true, "call-signature", "arrow-call-signature"],
     "arrow-parens": false,
     "no-duplicate-switch-case": true,
+    "interface-name": [true, "never-prefix"],
 
     "jsx-wrap-multiline": false,
     "jsx-no-multiline-js": false,

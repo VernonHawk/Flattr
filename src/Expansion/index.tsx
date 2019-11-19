@@ -13,7 +13,9 @@ export const Expansion = withStyles(() => ({
 
 export const ExpansionDetails = withStyles(() => ({
   root: {
-    padding: 0,
+    paddingLeft: 0,
+    paddingRight: 0,
+    paddingBottom: 0,
   },
 }))(ExpansionPanelDetails)
 
