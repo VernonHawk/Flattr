@@ -23,7 +23,7 @@ const FlatParamsForm = (): JSX.Element => {
     <Grid container direction="column" spacing={2} className={classes.form}>
       <Grid item container spacing={2}>
         <Grid item xs={6}>
-          <RoomsControl rooms={1} onChange={() => {}} />
+          <RoomsControl fullWidth />
         </Grid>
         <Grid item xs={6} className={classes.isUrgentContainer}>
           <IsUrgentControl className={classes.isUrgentControl} />
