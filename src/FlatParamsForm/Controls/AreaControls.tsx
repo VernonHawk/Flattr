@@ -7,8 +7,10 @@ interface AreaControlProps extends StandardTextFieldProps {
   readonly onChange: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
-const AreaControl = ({ area, onChange, ...rest }: AreaControlProps): JSX.Element => (
-  <TextField type='number' value={area} onChange={onChange} {...rest} />
+const areaLimits = { min: 0 }
+
+const AreaControl = ({ area, ...rest }: AreaControlProps): JSX.Element => (
+  <TextField type='number' value={area} inputProps={areaLimits} {...rest} />
 )
 
 export const FullAreaControl = (props: AreaControlProps): JSX.Element => (
