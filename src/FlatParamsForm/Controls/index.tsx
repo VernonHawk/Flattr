@@ -1,5 +1,3 @@
-export { default as FullAreaControl } from './FullAreaControl'
-export { default as LivingAreaControl } from './LivingAreaControl'
-export { default as KitchenAreaControl } from './KitchenAreaControl'
+export * from './AreaControls'
 export { default as IsUrgentControl } from './IsUrgentControl'
 export { default as RoomsControl } from './RoomsControl'
