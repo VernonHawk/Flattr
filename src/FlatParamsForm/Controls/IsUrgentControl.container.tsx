@@ -7,7 +7,7 @@ import IsUrgentControl from './IsUrgentControl'
 type OwnProps = Omit<FormControlLabelProps, 'control' | 'label'>
 
 interface StateProps {
-  readonly isChecked: boolean
+  readonly isUrgent: boolean
 }
 
 interface DispatchProps {
@@ -17,6 +17,8 @@ interface DispatchProps {
 export type IsUrgentControlProps = OwnProps & StateProps & DispatchProps
 
 export default connect(
-  ({ flatPramsForm: { isUrgent } }: AppState) => ({ isChecked: isUrgent }),
-  dispatch => ({ onChange: (): FlatParamsFormAction => dispatch(toggleIsUrgent()) }),
+  ({ flatPramsForm: { isUrgent } }: AppState): StateProps => ({ isUrgent }),
+  (dispatch): DispatchProps => ({
+    onChange: (): FlatParamsFormAction => dispatch(toggleIsUrgent()),
+  }),
 )(IsUrgentControl)
