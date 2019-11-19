@@ -9,10 +9,14 @@ interface FlatParamsFormState {
   readonly kitchenArea: Option<number>
 }
 
+const roomsBounds = { min: 1, max: 100 }
+const fullAreaBounds = { min: 1 }
+const areaBounds = { min: 0 }
+
 const initialState: FlatParamsFormState = {
-  rooms: 1,
+  rooms: roomsBounds.min,
   isUrgent: false,
-  fullArea: 0,
+  fullArea: fullAreaBounds.min,
   livingArea: None,
   kitchenArea: None,
 }
@@ -26,8 +30,8 @@ export const flatPramsForm = (
       return {
         ...state,
         rooms: parseNumber(action.newValue, parseInt)
-          .map(val => Math.min(Math.max(val, 1), 100))
-          .getOrElse(1),
+          .map(val => Math.min(Math.max(val, roomsBounds.min), roomsBounds.max))
+          .getOrElse(roomsBounds.min),
       }
 
     case FlatParamsFormActionTypes.TOGGLE_IS_URGENT:
@@ -37,8 +41,8 @@ export const flatPramsForm = (
       return {
         ...state,
         fullArea: parseArea(action.newValue)
-          .map(val => Math.max(val, 1))
-          .getOrElse(1),
+          .map(val => Math.max(val, fullAreaBounds.min))
+          .getOrElse(fullAreaBounds.min),
       }
 
     case FlatParamsFormActionTypes.CHANGE_LIVING_AREA:
@@ -52,7 +56,8 @@ export const flatPramsForm = (
   }
 }
 
-const parseArea = (area: string): Option<number> => parseNumber(area).map(val => Math.max(val, 0))
+const parseArea = (area: string): Option<number> =>
+  parseNumber(area).map(val => Math.max(val, areaBounds.min))
 
 const parseNumber = (num: string, parser = parseFloat): Option<number> =>
   Option.of(parser(num)).filter(val => !Number.isNaN(val))
