@@ -8,10 +8,10 @@ export enum FlatParamsFormActionTypes {
 
 interface ChangeRoomsAction {
   readonly type: FlatParamsFormActionTypes.CHANGE_ROOMS
-  readonly newValue: number
+  readonly newValue: string
 }
 
-export const changeRooms = (newValue: number): ChangeRoomsAction => ({
+export const changeRooms = (newValue: string): ChangeRoomsAction => ({
   type: FlatParamsFormActionTypes.CHANGE_ROOMS,
   newValue,
 })
@@ -26,10 +26,10 @@ export const toggleIsUrgent = (): ToggleIsUrgentAction => ({
 
 interface ChangeFullAreaAction {
   readonly type: FlatParamsFormActionTypes.CHANGE_FULL_AREA
-  readonly newValue: number
+  readonly newValue: string
 }
 
-export const changeFullArea = (newValue: number): ChangeFullAreaAction => ({
+export const changeFullArea = (newValue: string): ChangeFullAreaAction => ({
   type: FlatParamsFormActionTypes.CHANGE_FULL_AREA,
   newValue,
 })

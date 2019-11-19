@@ -23,13 +23,23 @@ export const flatPramsForm = (
 ): FlatParamsFormState => {
   switch (action.type) {
     case FlatParamsFormActionTypes.CHANGE_ROOMS:
-      return { ...state, rooms: action.newValue }
+      return {
+        ...state,
+        rooms: parseNumber(action.newValue, parseInt)
+          .map(val => Math.min(Math.max(val, 1), 100))
+          .getOrElse(1),
+      }
 
     case FlatParamsFormActionTypes.TOGGLE_IS_URGENT:
       return { ...state, isUrgent: !state.isUrgent }
 
     case FlatParamsFormActionTypes.CHANGE_FULL_AREA:
-      return { ...state, fullArea: action.newValue }
+      return {
+        ...state,
+        fullArea: parseArea(action.newValue)
+          .map(val => Math.max(val, 1))
+          .getOrElse(1),
+      }
 
     case FlatParamsFormActionTypes.CHANGE_LIVING_AREA:
       return { ...state, livingArea: parseArea(action.newValue) }
@@ -42,5 +52,7 @@ export const flatPramsForm = (
   }
 }
 
-const parseArea = (area: string): Option<number> =>
-  Option.of(parseFloat(area)).filter(val => !Number.isNaN(val))
+const parseArea = (area: string): Option<number> => parseNumber(area).map(val => Math.max(val, 0))
+
+const parseNumber = (num: string, parser = parseFloat): Option<number> =>
+  Option.of(parser(num)).filter(val => !Number.isNaN(val))
