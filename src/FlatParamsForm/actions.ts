@@ -1,6 +1,6 @@
 export enum FlatParamsFormActionTypes {
   CHANGE_ROOMS = 'CHANGE_ROOMS',
-  SWITCH_IS_URGENT = 'SWITCH_IS_URGENT',
+  TOGGLE_IS_URGENT = 'TOGGLE_IS_URGENT',
   CHANGE_FULL_AREA = 'CHANGE_FULL_AREA',
   CHANGE_LIVING_AREA = 'CHANGE_LIVING_AREA',
   CHANGE_KITCHEN_AREA = 'CHANGE_KITCHEN_AREA',
@@ -16,12 +16,12 @@ export const changeRooms = (newValue: number): ChangeRoomsAction => ({
   newValue,
 })
 
-interface SwitchIsUrgentAction {
-  readonly type: FlatParamsFormActionTypes.SWITCH_IS_URGENT
+interface ToggleIsUrgentAction {
+  readonly type: FlatParamsFormActionTypes.TOGGLE_IS_URGENT
 }
 
-export const switchIsUrgent = (): SwitchIsUrgentAction => ({
-  type: FlatParamsFormActionTypes.SWITCH_IS_URGENT,
+export const toggleIsUrgent = (): ToggleIsUrgentAction => ({
+  type: FlatParamsFormActionTypes.TOGGLE_IS_URGENT,
 })
 
 interface ChangeFullAreaAction {
@@ -56,7 +56,7 @@ export const changeKitchenArea = (newValue: string): ChangeKitchenAreaAction => 
 
 export type FlatParamsFormAction =
   | ChangeRoomsAction
-  | SwitchIsUrgentAction
+  | ToggleIsUrgentAction
   | ChangeFullAreaAction
   | ChangeLivingAreaAction
   | ChangeKitchenAreaAction

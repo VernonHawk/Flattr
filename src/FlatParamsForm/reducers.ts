@@ -25,7 +25,7 @@ export const flatPramsForm = (
     case FlatParamsFormActionTypes.CHANGE_ROOMS:
       return { ...state, rooms: action.newValue }
 
-    case FlatParamsFormActionTypes.SWITCH_IS_URGENT:
+    case FlatParamsFormActionTypes.TOGGLE_IS_URGENT:
       return { ...state, isUrgent: !state.isUrgent }
 
     case FlatParamsFormActionTypes.CHANGE_FULL_AREA:
