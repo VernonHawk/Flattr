@@ -12,6 +12,9 @@ const useStyles = makeStyles({
   isUrgentControl: {
     marginBottom: '-1rem',
   },
+  isUrgentContainer: {
+    display: 'flex',
+  },
 })
 
 const FlatParamsForm = (): JSX.Element => {
@@ -27,7 +30,7 @@ const FlatParamsForm = (): JSX.Element => {
         <Grid item xs={6}>
           <RoomsControl rooms={1} onChange={handleRoomsChange} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={6} className={classes.isUrgentContainer}>
           <IsUrgentControl
             isChecked={false}
             onChange={() => {}}
