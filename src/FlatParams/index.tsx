@@ -1,6 +1,6 @@
 import { Box, Grid, Paper, Typography } from '@material-ui/core'
 import React from 'react'
-import FlatParamsForm from './FlatParamsForm'
+import FlatParamsForm from '../FlatParamsForm/FlatParamsForm'
 
 const FlatParams = (): JSX.Element => (
   <Paper>
