@@ -1,26 +1,19 @@
 import { TextField } from '@material-ui/core'
-import { StandardTextFieldProps } from '@material-ui/core/TextField'
-import React, { ChangeEvent } from 'react'
-
-interface AreaControlProps extends StandardTextFieldProps {
-  readonly area: number
-  readonly onChange: (event: ChangeEvent<HTMLInputElement>) => void
-}
-
-const areaLimits = { min: 0 }
+import React from 'react'
+import { AreaControlProps } from './AreaControls.containers'
 
 const AreaControl = ({ area, ...rest }: AreaControlProps): JSX.Element => (
-  <TextField type='number' value={area} inputProps={areaLimits} {...rest} />
+  <TextField type="number" value={area} {...rest} />
 )
 
 export const FullAreaControl = (props: AreaControlProps): JSX.Element => (
-  <AreaControl label='Area' type='number' required fullWidth {...props} />
-)
-
-export const KitchenAreaControl = (props: AreaControlProps): JSX.Element => (
-  <TextField label='Kitchen' {...props} />
+  <AreaControl label="Area" required {...props} />
 )
 
 export const LivingAreaControl = (props: AreaControlProps): JSX.Element => (
-  <TextField label='Living rooms' {...props} />
+  <AreaControl label="Living rooms" {...props} />
+)
+
+export const KitchenAreaControl = (props: AreaControlProps): JSX.Element => (
+  <AreaControl label="Kitchen" {...props} />
 )

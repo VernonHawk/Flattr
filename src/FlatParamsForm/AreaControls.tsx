@@ -18,8 +18,7 @@ const AreaControlsContainer = (): JSX.Element => {
     <Expansion>
       <ExpansionSummary expandIcon={<ExpandMoreIcon />} className={classes.fullAreaContainer}>
         <FullAreaControl
-          area={1}
-          onChange={() => {}}
+          fullWidth
           onClick={stopExpansionPropagation}
           onFocus={stopExpansionPropagation}
         />
@@ -28,10 +27,10 @@ const AreaControlsContainer = (): JSX.Element => {
       <ExpansionDetails>
         <Grid container spacing={1}>
           <Grid item xs={6}>
-            <LivingAreaControl area={1} onChange={() => {}} />
+            <LivingAreaControl />
           </Grid>
           <Grid item xs={6}>
-            <KitchenAreaControl area={1} onChange={() => {}} />
+            <KitchenAreaControl />
           </Grid>
         </Grid>
       </ExpansionDetails>
