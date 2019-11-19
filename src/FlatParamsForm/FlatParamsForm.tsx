@@ -20,17 +20,13 @@ const FlatParamsForm = (): JSX.Element => {
   const classes = useStyles()
 
   return (
-    <Grid container direction='column' spacing={2} className={classes.form}>
+    <Grid container direction="column" spacing={2} className={classes.form}>
       <Grid item container spacing={2}>
         <Grid item xs={6}>
           <RoomsControl rooms={1} onChange={() => {}} />
         </Grid>
         <Grid item xs={6} className={classes.isUrgentContainer}>
-          <IsUrgentControl
-            isChecked={false}
-            onChange={() => {}}
-            className={classes.isUrgentControl}
-          />
+          <IsUrgentControl className={classes.isUrgentControl} />
         </Grid>
       </Grid>
 

@@ -1,19 +1,11 @@
 import { Checkbox, FormControlLabel } from '@material-ui/core'
-import { FormControlLabelProps } from '@material-ui/core/FormControlLabel'
 import FireIcon from '@material-ui/icons/Whatshot'
 import React from 'react'
+import { IsUrgentControlProps } from './IsUrgentControl.container'
 
-interface IsUrgentControlProps {
-  readonly isChecked: boolean
-  readonly onChange: () => void
-}
-
-const IsUrgentControl = ({
-  isChecked,
-  onChange,
-  ...rest
-}: IsUrgentControlProps & Omit<FormControlLabelProps, 'control' | 'label'>): JSX.Element => (
+const IsUrgentControl = ({ isChecked, onChange, ...rest }: IsUrgentControlProps): JSX.Element => (
   <FormControlLabel
+    label='Is urgent?'
     control={
       <Checkbox
         icon={<FireIcon />}
@@ -22,7 +14,6 @@ const IsUrgentControl = ({
         onChange={onChange}
       />
     }
-    label='Is urgent?'
     {...rest}
   />
 )
