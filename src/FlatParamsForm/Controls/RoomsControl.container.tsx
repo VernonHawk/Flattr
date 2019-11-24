@@ -2,7 +2,7 @@ import { TextFieldProps } from '@material-ui/core/TextField'
 import { ChangeEvent } from 'react'
 import { connect } from 'react-redux'
 import { AppState } from '../../store'
-import { changeRooms, FlatParamsFormAction } from '../actions'
+import { changeRooms, FlatParamsFormAction } from './actions'
 import RoomsControl from './RoomsControl'
 
 type OwnProps = TextFieldProps

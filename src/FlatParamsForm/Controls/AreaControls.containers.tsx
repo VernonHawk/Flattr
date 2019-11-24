@@ -7,7 +7,7 @@ import {
   changeKitchenArea,
   changeLivingArea,
   FlatParamsFormAction,
-} from '../actions'
+} from './actions'
 import { FullAreaControl, KitchenAreaControl, LivingAreaControl } from './AreaControls'
 
 type OwnProps = StandardTextFieldProps

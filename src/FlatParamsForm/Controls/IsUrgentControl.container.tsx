@@ -1,7 +1,7 @@
 import { FormControlLabelProps } from '@material-ui/core/FormControlLabel'
 import { connect } from 'react-redux'
 import { AppState } from '../../store'
-import { FlatParamsFormAction, toggleIsUrgent } from '../actions'
+import { FlatParamsFormAction, toggleIsUrgent } from './actions'
 import IsUrgentControl from './IsUrgentControl'
 
 type OwnProps = Omit<FormControlLabelProps, 'control' | 'label'>

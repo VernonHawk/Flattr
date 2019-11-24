@@ -1,5 +1,5 @@
 import { None, Option } from 'funfix-core'
-import { FlatParamsFormAction, FlatParamsFormActionTypes } from './actions'
+import { FlatParamsFormAction, FlatParamsFormActionTypes } from './Controls/actions'
 
 interface FlatParamsFormState {
   readonly rooms: number
