@@ -9,7 +9,7 @@ const fetchStub = (ms: number): Promise<number> =>
 
 function* getFlatPrice(): SagaIterator {
   try {
-    const price = (yield call(fetchStub, 2000)) as number
+    const price = (yield call(fetchStub, 1000)) as number
 
     yield put(getFlatPriceSuccess(price))
   } catch (error) {

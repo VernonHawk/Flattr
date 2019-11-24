@@ -1,4 +1,4 @@
-import { Box, CircularProgress, Grid, Typography, makeStyles } from '@material-ui/core'
+import { Box, CircularProgress, Grid, makeStyles, Typography } from '@material-ui/core'
 import React from 'react'
 import { FlatPriceDisplayType, FlatPriceProps } from './container'
 

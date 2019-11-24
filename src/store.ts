@@ -3,7 +3,7 @@ import { applyMiddleware, combineReducers, createStore } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import createSagaMiddleware, { SagaIterator } from 'redux-saga'
 import { flatPramsForm } from './FlatParamsForm'
-import { flatPrice, watchFlatPriceRequest } from './GetFlatPriceButton'
+import { flatPrice, watchFlatPriceRequest } from './FlatPrice'
 
 const rootReducer = combineReducers({ flatPramsForm, flatPrice })
 

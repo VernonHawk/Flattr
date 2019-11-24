@@ -1,7 +1,7 @@
 import { ButtonProps } from '@material-ui/core/Button'
 import { connect } from 'react-redux'
+import { GetFlatPriceAction, getFlatPriceRequest } from '../FlatPrice'
 import { AppState } from '../store'
-import { GetFlatPriceAction, getFlatPriceRequest } from './actions'
 import GetFlatPriceButton from './GetFlatPriceButton'
 
 type OwnProps = ButtonProps
