@@ -6,7 +6,7 @@ const FlatParams = (): JSX.Element => (
   <Paper>
     <Grid container spacing={1}>
       <Grid item xs={7}>
-        <Box width={500} height={400}>
+        <Box width={500} height={340}>
           <Typography>Map</Typography>
         </Box>
       </Grid>
