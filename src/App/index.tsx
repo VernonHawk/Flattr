@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/styles'
 import React from 'react'
 import FlatParams from '../FlatParams'
 import FlatPrice from '../FlatPrice'
-import GetFlatPrice from '../GetFlatPrice'
+import GetFlatPriceButton from '../GetFlatPriceButton'
 
 const useStyles = makeStyles({
   header: {
@@ -28,7 +28,7 @@ const App = (): JSX.Element => {
           <FlatParams />
         </Grid>
         <Grid item>
-          <GetFlatPrice />
+          <GetFlatPriceButton />
         </Grid>
       </Grid>
     </Container>
