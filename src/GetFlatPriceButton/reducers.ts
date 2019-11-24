@@ -20,7 +20,7 @@ export const flatPrice = (state = initialState, action: GetFlatPriceAction): Fla
       return { ...state, price: Some(action.price), isLoading: false }
 
     case GetFlatPriceActionTypes.GET_FLAT_PRICE_ERROR:
-      return { ...state, isLoading: false }
+      return { ...state, price: None, isLoading: false }
 
     default:
       return state
