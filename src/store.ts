@@ -3,9 +3,9 @@ import { applyMiddleware, combineReducers, createStore } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import createSagaMiddleware, { SagaIterator } from 'redux-saga'
 import { flatPramsForm } from './FlatParamsForm'
-import { watchFlatPriceRequest } from './GetFlatPriceButton'
+import { flatPrice, watchFlatPriceRequest } from './GetFlatPriceButton'
 
-const rootReducer = combineReducers({ flatPramsForm })
+const rootReducer = combineReducers({ flatPramsForm, flatPrice })
 
 function* rootSaga(): SagaIterator {
   yield all([watchFlatPriceRequest].map(fork))

@@ -1,36 +1,36 @@
-export enum GetFlatPriceButtonTypes {
+export enum GetFlatPriceActionTypes {
   GET_FLAT_PRICE_REQUEST = 'GET_FLAT_PRICE_REQUEST',
   GET_FLAT_PRICE_SUCCESS = 'GET_FLAT_PRICE_SUCCESS',
   GET_FLAT_PRICE_ERROR = 'GET_FLAT_PRICE_ERROR',
 }
 
 interface GetFlatPriceRequestAction {
-  readonly type: GetFlatPriceButtonTypes.GET_FLAT_PRICE_REQUEST
+  readonly type: GetFlatPriceActionTypes.GET_FLAT_PRICE_REQUEST
 }
 
 export const getFlatPriceRequest = (): GetFlatPriceRequestAction => ({
-  type: GetFlatPriceButtonTypes.GET_FLAT_PRICE_REQUEST,
+  type: GetFlatPriceActionTypes.GET_FLAT_PRICE_REQUEST,
 })
 
 interface GetFlatPriceSuccessAction {
-  readonly type: GetFlatPriceButtonTypes.GET_FLAT_PRICE_SUCCESS
+  readonly type: GetFlatPriceActionTypes.GET_FLAT_PRICE_SUCCESS
   readonly price: number
 }
 
 export const getFlatPriceSuccess = (price: number): GetFlatPriceSuccessAction => ({
-  type: GetFlatPriceButtonTypes.GET_FLAT_PRICE_SUCCESS,
+  type: GetFlatPriceActionTypes.GET_FLAT_PRICE_SUCCESS,
   price,
 })
 
 interface GetFlatPriceErrorAction {
-  readonly type: GetFlatPriceButtonTypes.GET_FLAT_PRICE_ERROR
+  readonly type: GetFlatPriceActionTypes.GET_FLAT_PRICE_ERROR
 }
 
 export const getFlatPriceError = (): GetFlatPriceErrorAction => ({
-  type: GetFlatPriceButtonTypes.GET_FLAT_PRICE_ERROR,
+  type: GetFlatPriceActionTypes.GET_FLAT_PRICE_ERROR,
 })
 
-export type GetFlatPriceButtonAction =
+export type GetFlatPriceAction =
   | GetFlatPriceRequestAction
   | GetFlatPriceSuccessAction
   | GetFlatPriceErrorAction

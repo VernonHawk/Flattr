@@ -1,6 +1,6 @@
 import { call, put, takeEvery } from '@redux-saga/core/effects'
 import { SagaIterator } from 'redux-saga'
-import { GetFlatPriceButtonTypes, getFlatPriceError, getFlatPriceSuccess } from './actions'
+import { GetFlatPriceActionTypes, getFlatPriceError, getFlatPriceSuccess } from './actions'
 
 const fetchStub = (ms: number): Promise<number> =>
   new Promise((resolve, reject): void => {
@@ -18,5 +18,5 @@ function* getFlatPrice(): SagaIterator {
 }
 
 export function* watchFlatPriceRequest(): SagaIterator {
-  yield takeEvery(GetFlatPriceButtonTypes.GET_FLAT_PRICE_REQUEST, getFlatPrice)
+  yield takeEvery(GetFlatPriceActionTypes.GET_FLAT_PRICE_REQUEST, getFlatPrice)
 }
