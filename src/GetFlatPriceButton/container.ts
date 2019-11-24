@@ -1,7 +1,7 @@
 import { ButtonProps } from '@material-ui/core/Button'
 import { connect } from 'react-redux'
 import { AppState } from '../store'
-import { getFlatPrice, GetFlatPriceButtonAction } from './actions'
+import { GetFlatPriceButtonAction, getFlatPriceRequest } from './actions'
 import GetFlatPriceButton from './GetFlatPriceButton'
 
 type OwnProps = ButtonProps
@@ -17,6 +17,6 @@ export type GetFlatPriceButtonProps = OwnProps & StateProps & DispatchProps
 export default connect(
   null,
   (dispatch): DispatchProps => ({
-    onClick: (): GetFlatPriceButtonAction => dispatch(getFlatPrice()),
+    onClick: (): GetFlatPriceButtonAction => dispatch(getFlatPriceRequest()),
   }),
 )(GetFlatPriceButton)
