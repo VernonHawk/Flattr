@@ -6,10 +6,18 @@ const GetFlatPriceButton = ({
   isLoading,
   isDisabled,
   onClick,
-}: GetFlatPriceButtonProps): JSX.Element => (
-  <Button variant="contained" color="primary" onClick={onClick} disabled={isDisabled}>
-    {isLoading ? <CircularProgress size={24} /> : 'Give me a price'}
-  </Button>
-)
+}: GetFlatPriceButtonProps): JSX.Element => {
+  const content = isLoading ? (
+    <CircularProgress size={24} /> // the size of the text
+  ) : (
+    'Give me a price'
+  )
+
+  return (
+    <Button variant="contained" color="primary" onClick={onClick} disabled={isDisabled}>
+      {content}
+    </Button>
+  )
+}
 
 export default GetFlatPriceButton
