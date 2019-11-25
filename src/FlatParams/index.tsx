@@ -1,13 +1,21 @@
-import { Box, Grid, Paper, Typography } from '@material-ui/core'
+import { Box, Grid, Paper } from '@material-ui/core'
 import React from 'react'
-import FlatParamsForm from '../FlatParamsForm/FlatParamsForm'
+import { Marker } from 'react-google-maps'
+import FlatParamsForm from '../FlatParamsForm'
+import KyivMap from '../KyivMap'
 
 const FlatParams = (): JSX.Element => (
   <Paper>
-    <Grid container spacing={1}>
+    <Grid container>
       <Grid item xs={7}>
         <Box width={500} height={340}>
-          <Typography>Map</Typography>
+          <KyivMap
+            loadingElement={<div style={{ height: '100%' }} />}
+            containerElement={<></>}
+            mapElement={<div style={{ height: '100%' }} />}
+          >
+            <Marker position={{ lat: 50.464203, lng: 30.519828 }} />
+          </KyivMap>
         </Box>
       </Grid>
 

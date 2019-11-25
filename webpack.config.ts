@@ -1,4 +1,5 @@
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
+import Dotenv from 'dotenv-webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { resolve } from 'path'
 import webpack from 'webpack'
@@ -46,6 +47,7 @@ const config: webpack.Configuration & devServer.Configuration = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
+    new Dotenv(),
   ],
 }
 
