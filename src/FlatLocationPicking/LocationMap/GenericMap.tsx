@@ -22,7 +22,7 @@ type GenericMapProps = GoogleMapProps &
   Partial<WithGoogleMapProps> &
   Omit<WithScriptjsProps, 'googleMapURL'>
 
-const GenericMap: FC<GenericMapProps> = (props): JSX.Element => {
+const GenericMap = (props: GenericMapProps): JSX.Element => {
   const classes = useStyles()
 
   return (
