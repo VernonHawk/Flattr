@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/styles'
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import {
   GoogleMap,
   GoogleMapProps,
@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   },
 })
 
-type GenericMapProps = GoogleMapProps &
+type GenericMapProps = PropsWithChildren<GoogleMapProps> &
   Partial<WithGoogleMapProps> &
   Omit<WithScriptjsProps, 'googleMapURL'>
 
