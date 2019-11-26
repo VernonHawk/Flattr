@@ -1,18 +1,12 @@
-import React, { FC } from 'react'
-import { GoogleMap, withGoogleMap, withScriptjs } from 'react-google-maps'
+import React, { ComponentProps, FC } from 'react'
+import GenericMap from './GenericMap'
 
-type KyivMapProps = Omit<React.ComponentProps<typeof GenericMap>, 'googleMapURL'>
-
-const googleMapURL = `https://maps.googleapis.com/maps/api/js?key=${process.env.MAPS_API_KEY}`
+type KyivMapProps = Omit<ComponentProps<typeof GenericMap>, 'defaultZoom' | 'defaultCenter'>
 
 const NaUKMACoords = { lat: 50.464203, lng: 30.519828 }
 
-const KyivMap: FC<KyivMapProps> = ({ children, ...rest }): JSX.Element => (
-  <GenericMap defaultZoom={10} defaultCenter={NaUKMACoords} googleMapURL={googleMapURL} {...rest}>
-    {children}
-  </GenericMap>
+const KyivMap: FC<KyivMapProps> = (props): JSX.Element => (
+  <GenericMap defaultZoom={11} defaultCenter={NaUKMACoords} {...props} />
 )
-
-const GenericMap = withScriptjs(withGoogleMap(GoogleMap))
 
 export default KyivMap
