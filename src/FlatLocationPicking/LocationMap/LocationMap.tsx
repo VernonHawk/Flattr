@@ -1,17 +1,15 @@
 import React from 'react'
 import { Marker } from 'react-google-maps'
+import GenericMap from '../GenericMap'
 import { LocationMapProps } from './container'
-import GenericMap from './GenericMap'
 
-const LocationMap = ({ markerPosition, ...rest }: LocationMapProps): JSX.Element => {
-  const content = markerPosition
-    .map(({ latitude: lat, longitude: lng }) => (
-      // tslint:disable-next-line: jsx-key
-      <Marker position={{ lat, lng }} />
-    ))
-    .orNull()
-
-  return <GenericMap {...rest}>{content}</GenericMap>
-}
+const LocationMap = ({
+  markerPosition: { latitude: lat, longitude: lng },
+  ...rest
+}: LocationMapProps): JSX.Element => (
+  <GenericMap {...rest}>
+    <Marker position={{ lat, lng }} />
+  </GenericMap>
+)
 
 export default LocationMap

@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/styles'
-import React, { FC } from 'react'
+import React from 'react'
 import {
   GoogleMap,
   GoogleMapProps,
