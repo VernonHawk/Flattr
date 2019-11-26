@@ -62,7 +62,7 @@ const parseArea = (area: string): Option<number> =>
 const parseNumber = (num: string, parser = parseFloat): Option<number> =>
   Option.of(parser(num)).filter(val => !Number.isNaN(val))
 
-export interface Flat {
+export interface FlatParams {
   readonly rooms: number
   readonly isUrgent: boolean
   readonly fullArea: number
@@ -74,7 +74,7 @@ export const formStateToPlainObject = ({
   livingArea,
   kitchenArea,
   ...rest
-}: FlatParamsFormState): Flat => ({
+}: FlatParamsFormState): FlatParams => ({
   livingArea: livingArea.orNull(),
   kitchenArea: kitchenArea.orNull(),
   ...rest,

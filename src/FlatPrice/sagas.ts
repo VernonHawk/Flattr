@@ -1,24 +1,20 @@
 import { call, put, select, takeEvery } from '@redux-saga/core/effects'
 import { SagaIterator } from 'redux-saga'
-import { Flat, formStateToPlainObject } from '../FlatParamsForm'
+import { fetchFlatPrice, Flat } from '../API'
+import { formStateToPlainObject } from '../FlatParamsForm'
 import { AppState } from '../store'
 import { GetFlatPriceActionTypes, getFlatPriceError, getFlatPriceSuccess } from './actions'
 
-const fetchFlatPrice = (flat: Flat): Promise<number> =>
-  new Promise((resolve, reject): void => {
-    setTimeout(
-      () => (Math.random() > 0.2 ? resolve(Math.floor(Math.random() * 100000)) : reject()),
-      Math.random() * 2000,
-    )
-  })
+const flatStateFromAppState = ({ flatPramsForm, flatLocation }: AppState): Flat => ({
+  ...formStateToPlainObject(flatPramsForm),
+  ...flatLocation,
+})
 
 function* getFlatPrice(): SagaIterator {
   try {
-    const flatParams: Flat = yield select(
-      ({ flatPramsForm }: AppState): Flat => formStateToPlainObject(flatPramsForm),
-    )
+    const flat: Flat = yield select(flatStateFromAppState)
 
-    const price = (yield call(fetchFlatPrice, flatParams)) as number
+    const price = (yield call(fetchFlatPrice, flat)) as number
 
     yield put(getFlatPriceSuccess(price))
   } catch (error) {
