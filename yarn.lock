@@ -220,6 +220,11 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/googlemaps@3.38.0":
+  version "3.38.0"
+  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.38.0.tgz#069c0303ec60706b2e32b14330634c1e1cd59e45"
+  integrity sha512-Rp7FnrwyYGnjoxM+/q/4DRqUzvV9JKK1SBRXx8APxU6NNMtYMsWmOMsQOV2U6z8aMFzlUbRv3EDixLcDep8t9w==
+
 "@types/hoist-non-react-statics@^3.3.0":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
