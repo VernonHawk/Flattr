@@ -1,5 +1,7 @@
-import { AppState } from '../store'
+import { FlatParamsFormState } from './reducers'
 
 export const subareasBiggerThanFullArea = ({
-  flatPramsForm: { fullArea, livingArea, kitchenArea },
-}: AppState): boolean => livingArea.getOrElse(0) + kitchenArea.getOrElse(0) > fullArea
+  fullArea,
+  livingArea,
+  kitchenArea,
+}: FlatParamsFormState): boolean => livingArea.getOrElse(0) + kitchenArea.getOrElse(0) > fullArea

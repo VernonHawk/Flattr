@@ -21,9 +21,9 @@ interface DispatchProps {
 export type FullAreaControlProps = OwnProps & StateProps & DispatchProps
 
 export default connect(
-  (state: AppState): StateProps => ({
-    area: state.flatPramsForm.fullArea,
-    errorHint: subareasBiggerThanFullArea(state)
+  ({ flatPramsForm }: AppState): StateProps => ({
+    area: flatPramsForm.fullArea,
+    errorHint: subareasBiggerThanFullArea(flatPramsForm)
       ? Some("Sum of subareas can't be bigger than the full area")
       : None,
   }),

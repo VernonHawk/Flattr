@@ -1,7 +1,7 @@
 import { None, Option } from 'funfix-core'
 import { FlatParamsFormAction, FlatParamsFormActionTypes } from './Controls/actions'
 
-interface FlatParamsFormState {
+export interface FlatParamsFormState {
   readonly rooms: number
   readonly isUrgent: boolean
   readonly fullArea: number
