@@ -2,13 +2,8 @@ import { StandardTextFieldProps } from '@material-ui/core/TextField'
 import { ChangeEvent } from 'react'
 import { connect } from 'react-redux'
 import { AppState } from '../../store'
-import {
-  changeFullArea,
-  changeKitchenArea,
-  changeLivingArea,
-  FlatParamsFormAction,
-} from './actions'
-import { FullAreaControl, KitchenAreaControl, LivingAreaControl } from './AreaControls'
+import { changeKitchenArea, changeLivingArea, FlatParamsFormAction } from './actions'
+import { KitchenAreaControl, LivingAreaControl } from './AreaControls'
 
 type OwnProps = StandardTextFieldProps
 
@@ -22,23 +17,16 @@ interface DispatchProps {
 
 export type AreaControlProps = OwnProps & StateProps & DispatchProps
 
-export const FullAreaControlContainer = connect(
-  ({ flatPramsForm: { fullArea: area } }: AppState): StateProps => ({ area }),
-  (dispatch): DispatchProps => ({
-    onChange: (event): FlatParamsFormAction => dispatch(changeFullArea(event.target.value)),
-  }),
-)(FullAreaControl)
-
 export const LivingAreaControlContainer = connect(
-  ({ flatPramsForm: { livingArea } }: AppState): StateProps => ({ area: livingArea.getOrElse('') }),
+  (state: AppState): StateProps => ({ area: state.flatPramsForm.livingArea.getOrElse('') }),
   (dispatch): DispatchProps => ({
     onChange: (event): FlatParamsFormAction => dispatch(changeLivingArea(event.target.value)),
   }),
 )(LivingAreaControl)
 
 export const KitchenAreaControlContainer = connect(
-  ({ flatPramsForm: { kitchenArea } }: AppState): StateProps => ({
-    area: kitchenArea.getOrElse(''),
+  (state: AppState): StateProps => ({
+    area: state.flatPramsForm.kitchenArea.getOrElse(''),
   }),
   (dispatch): DispatchProps => ({
     onChange: (event): FlatParamsFormAction => dispatch(changeKitchenArea(event.target.value)),

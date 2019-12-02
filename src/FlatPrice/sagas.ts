@@ -1,7 +1,7 @@
 import { call, put, select, takeEvery } from '@redux-saga/core/effects'
 import { SagaIterator } from 'redux-saga'
 import { fetchFlatPrice, Flat } from '../API'
-import { formStateToPlainObject } from '../FlatParamsForm'
+import { formStateToPlainObject } from '../FlatParamsForm/reducers'
 import { AppState } from '../store'
 import { GetFlatPriceActionTypes, getFlatPriceError, getFlatPriceSuccess } from './actions'
 

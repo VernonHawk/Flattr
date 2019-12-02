@@ -1,5 +1,5 @@
-import { FlatLocation } from '../FlatLocationPicking'
-import { FlatParams } from '../FlatParamsForm'
+import { FlatLocation } from '../FlatLocationPicking/actions'
+import { FlatParams } from '../FlatParamsForm/reducers'
 
 export const fetchFlatPrice = async (flat: Flat): Promise<number> => {
   const resp = await fetch(process.env.API_URL!, {
