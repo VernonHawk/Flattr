@@ -1,5 +1,6 @@
 import { ButtonProps } from '@material-ui/core/Button'
 import { connect } from 'react-redux'
+import { subareasBiggerThanFullArea } from '../FlatParamsForm/selectors'
 import { GetFlatPriceAction, getFlatPriceRequest } from '../FlatPrice/actions'
 import { AppState } from '../store'
 import GetFlatPriceButton from './GetFlatPriceButton'
@@ -18,7 +19,10 @@ interface DispatchProps {
 export type GetFlatPriceButtonProps = OwnProps & StateProps & DispatchProps
 
 export default connect(
-  ({ flatPrice: { isLoading } }: AppState): StateProps => ({ isLoading, isDisabled: isLoading }),
+  ({ flatPrice: { isLoading }, flatPramsForm }: AppState): StateProps => ({
+    isLoading,
+    isDisabled: isLoading || subareasBiggerThanFullArea(flatPramsForm),
+  }),
   (dispatch): DispatchProps => ({
     onClick: (): GetFlatPriceAction => dispatch(getFlatPriceRequest()),
   }),
