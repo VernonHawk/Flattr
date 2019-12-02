@@ -1,12 +1,15 @@
 import { FlatLocation } from '../FlatLocationPicking'
 import { FlatParams } from '../FlatParamsForm'
 
-export const fetchFlatPrice = (flat: Flat): Promise<number> =>
-  new Promise((resolve, reject): void => {
-    setTimeout(
-      () => (Math.random() > 0.2 ? resolve(Math.floor(Math.random() * 100000)) : reject()),
-      Math.random() * 2000,
-    )
+export const fetchFlatPrice = async (flat: Flat): Promise<number> => {
+  const resp = await fetch(process.env.API_URL!, {
+    method: 'POST',
+    body: JSON.stringify(flat),
   })
+
+  const data: Flat = await resp.json()
+
+  return Math.floor(Math.random() * 100000)
+}
 
 export type Flat = FlatParams & FlatLocation
