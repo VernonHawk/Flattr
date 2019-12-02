@@ -18,6 +18,7 @@ function* getFlatPrice(): SagaIterator {
 
     yield put(getFlatPriceSuccess(price))
   } catch (error) {
+    console.error('Get price error:', error)
     yield put(getFlatPriceError())
   }
 }
