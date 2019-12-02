@@ -18,8 +18,8 @@ const App = (): JSX.Element => {
     <Container maxWidth="md">
       <CssBaseline />
       <Grid container direction="column" justify="center" alignItems="center" spacing={5}>
-        <Grid item className={classes.header}>
-          <Header />
+        <Grid item container justify="center" className={classes.header}>
+          <Typography variant="h3">Know how much a flat is really worth!</Typography>
         </Grid>
         <Grid item>
           <FlatPrice />
@@ -34,11 +34,5 @@ const App = (): JSX.Element => {
     </Container>
   )
 }
-
-const Header = (): JSX.Element => (
-  <Grid container justify="center">
-    <Typography variant="h3">Know how much a flat is really worth!</Typography>
-  </Grid>
-)
 
 export default App
