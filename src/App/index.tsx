@@ -37,7 +37,6 @@ const App = (): JSX.Element => {
 
 const Header = (): JSX.Element => (
   <Grid container justify="center">
-    {/*<Typography variant='h1'>Flattr</Typography> */}
     <Typography variant="h3">Know how much a flat is really worth!</Typography>
   </Grid>
 )
