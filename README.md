@@ -58,6 +58,7 @@ After installing the packages, you should be able to run these commands via `npm
 
 - [TypeScript](https://www.typescriptlang.org/) - a typed superset of JavaScript that compiles to plain JavaScript;
 - [React](https://reactjs.org/) - a useful declarative UI library with a vast ecosystem;
+- [Redux](https://redux.js.org/) - a powerful state-management solution;
 - [Material UI](https://material-ui.com/) - a clean UI library for React;
 - [Google Maps API](https://developers.google.com/maps/documentation/javascript) - a popular maps solution;
 - [Webpack](https://webpack.js.org/) - a great javaScript module bundler.
